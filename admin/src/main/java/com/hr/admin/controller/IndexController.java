@@ -14,7 +14,7 @@ public class IndexController {
 	@RequestMapping(value= {"/"})
 	public ModelAndView login() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageName", "Welcome to IN+");
+		mav.addObject("pageName", "LOGIN");
 		mav.setViewName("login");
 		return mav;
 	}
