@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
 
 <head>
 
@@ -8,14 +10,8 @@
 
     <title>INSPINIA | Login</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="/css/animate.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-
 </head>
-
+<th:block layout:fragment="content">
 <body class="gray-bg">
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
@@ -47,11 +43,6 @@
         </div>
     </div>
 
-    <!-- Mainly scripts -->
-    <script src="/js/jquery-3.1.1.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-
 </body>
-
+</th:block>
 </html>
