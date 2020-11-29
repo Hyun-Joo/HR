@@ -11,8 +11,8 @@
     <title>INSPINIA | Login</title>
 
 </head>
-<th:block layout:fragment="content">
 <body class="gray-bg">
+<th:block layout:fragment="content">
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -43,6 +43,16 @@
         </div>
     </div>
 
-</body>
+<script th:inline="javascript">
+
+var pageName = [[${pageName}]];
+
+$(document).ready(function(){
+	console.log(pageName);
+})
+
+</script>
+
 </th:block>
+</body>
 </html>
