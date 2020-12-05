@@ -2,8 +2,9 @@ function commonAjax(paramData, url, fnCallBack){
 	$.ajax({
 		url : url,
 		data : JSON.stringify(paramData),
-		type : "post", 
-		dataType : "json" 
+		type : "POST", 
+		dataType : "json",
+		contentType: "application/json; charset=UTF-8"
 	})
 	.done(function(result) {
 		if(typeof fnCallBack =='function' ){

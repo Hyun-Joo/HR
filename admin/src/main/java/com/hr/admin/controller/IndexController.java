@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class IndexController {
-
 	
 	@RequestMapping(value= {"/"})
 	public ModelAndView login() {
