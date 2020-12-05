@@ -1,7 +1,7 @@
 function commonAjax(paramData, url, fnCallBack){
 	$.ajax({
 		url : url,
-		data : paramData,
+		data : JSON.stringify(paramData),
 		type : "post", 
 		dataType : "json" 
 	})
