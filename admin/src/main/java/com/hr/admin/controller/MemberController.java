@@ -31,5 +31,11 @@ public class MemberController {
 		Integer result = service.idCheck(mbAcc);
 		return result;
 	}
+	
+	@PostMapping("/register")
+	public Map<String,Object> register(@RequestBody Map<String,Object> param){
+		Map<String,Object> result = service.register(param);
+		return result;
+	}
 
 }

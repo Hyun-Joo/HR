@@ -7,5 +7,65 @@
 		FROM MEMBERS
 		WHERE MB_ACC = #{mbAcc}
 	</select>
+	
+	<select id="getMemberInfo" parameterType="java.util.HashMap" resultType="camelMap">
+		SELECT MB_NO
+			 , MB_ACC
+			 , MB_NM
+			 , MB_PWD
+			 , MB_EMAIL
+			 , MB_TEL
+			 , MB_ZIP
+			 , MB_ADDR1
+			 , MB_ADDR2
+			 , MB_POS_CD
+			 , MB_ROLE_CD
+			 , MB_DEPTS_CD
+		FROM MEMBERS
+		WHERE 1 = 1
+		<if test="mbNo != null and mbNo != ''">
+		AND MB_NO = #{mbNo}
+		</if>
+		<if test="mbAcc != null and mbAcc != ''">
+		AND MB_ACC = #{mbAcc}
+		</if>
+		<if test="mbNm != null and mbNm != ''">
+		AND MB_NM = #{mbNm}
+		</if>
+		<if test="mbTel != null and mbTel != ''">
+		AND MB_TEL = #{mbTel}
+		</if>
+		AND MB_USE_YN = 'Y'
+	</select>
+	
+	<insert id="register" parameterType="java.util.HashMap">
+		INSERT INTO MEMBERS 
+			(
+			MB_NO
+		   ,MB_ACC
+		   ,MB_PWD
+		   ,MB_NM
+		   ,MB_EMAIL
+		   ,MB_TEL
+		   ,MB_REG_BY
+		   ,MB_REG_DT
+		   ,MB_MOD_BY
+		   ,MB_MOD_DT
+		   ,MB_USE_YN
+			)
+		VALUES (
+				MEMBERS_SEQ.NEXTVAL
+			   ,#{mbAcc}
+			   ,#{mbPwd}
+			   ,#{mbNm}
+			   ,#{mbEmail}
+			   ,#{mbTel}
+			   ,#{mbAcc}
+			   ,SYSDATE
+			   ,#{mbAcc}
+			   ,SYSDATE
+			   ,#{mbUseYn}
+				)
+	</insert>
 
 </mapper>
